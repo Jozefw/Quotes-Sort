@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>filter</title>
+</head>
+<body>
+	<input type="text" name="" id="commas">
+	<button type="submit" id="button_submit">Submit</button>
+	<script>
+		let input_string = document.getElementById('button_submit');
+		input_string.addEventListener('click',getString);
+
+		function getString(e){
+		let input_text = document.getElementById('commas').value;
+			let input_array = input_text.toString().split("");
+			let one_quote =[];
+			let two_quote =[];
+			input_array.filter(function(quote){
+				if(quote === '\''){
+					one_quote.push(quote);
+					console.log("one",one_quote);
+					return one_quote;
+				} else {
+					 two_quote.push(quote);
+					 console.log("two",two_quote);
+					 return two_quote;
+				}
+			})
+		}
+
+
+	</script>
+</body>
+</html>
